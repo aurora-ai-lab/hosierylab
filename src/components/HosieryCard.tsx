@@ -6,7 +6,7 @@ export function HosieryCard({ item, showCompare = true }: { item: HosieryItem; s
   return (
     <article className="specimen-card">
       <Link href={`/hosiery/${item.slug}`} className="card-visual">
-        <img className="card-image" src={`/catalog/${item.code}.png`} alt={`${item.name} visual reference`} loading="lazy" />
+        <img className="card-image" src={`/catalog/${item.code}.webp`} alt={`${item.name} visual reference`} loading="lazy" />
         <div className="card-image-fallback"><LegDiagram item={item} compact /></div>
         <div className="card-badge">{item.origin === "real_sku" ? "REAL SKU" : "HL STANDARD"}</div>
       </Link>

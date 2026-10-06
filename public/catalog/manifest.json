@@ -2,7 +2,7 @@
   {
     "hl_code": "HL-000001-product-v1",
     "seed": 24061003,
-    "preview_image": "/catalog/HL-000001.png",
+    "preview_image": "/catalog/HL-000001.webp",
     "source_asset": "assets/grok-inbox/images/HL-000001-product-v1.png",
     "cosplay_archetype": "Sailor Moon",
     "hosiery": "tất da đen 15 denier, dệt trơn, siêu trong, ánh mờ tự nhiên, không họa tiết",
@@ -13,7 +13,7 @@
   {
     "hl_code": "HL-000002-product-v1",
     "seed": 24061002,
-    "preview_image": "/catalog/HL-000002.png",
+    "preview_image": "/catalog/HL-000002.webp",
     "source_asset": "assets/grok-inbox/images/HL-000002-product-v1.png",
     "cosplay_archetype": "Cardcaptor Sakura",
     "hosiery": "tất da màu đỏ rượu vang 40 denier, dệt gân dọc, bán đục, bề mặt mờ, chấm bi nhỏ",
@@ -24,7 +24,7 @@
   {
     "hl_code": "HL-000003-product-v1",
     "seed": 24061003,
-    "preview_image": "/catalog/HL-000003.png",
+    "preview_image": "/catalog/HL-000003.webp",
     "source_asset": "assets/grok-inbox/images/HL-000003-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "黑微点20D",
@@ -35,7 +35,7 @@
   {
     "hl_code": "HL-000004-product-v1",
     "seed": 24061004,
-    "preview_image": "/catalog/HL-000004.png",
+    "preview_image": "/catalog/HL-000004.webp",
     "source_asset": "assets/grok-inbox/images/HL-000004-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "蜜裸12D",
@@ -46,7 +46,7 @@
   {
     "hl_code": "HL-000005-product-v1",
     "seed": 24061005,
-    "preview_image": "/catalog/HL-000005.png",
+    "preview_image": "/catalog/HL-000005.webp",
     "source_asset": "assets/grok-inbox/images/HL-000005-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "裸10D超薄",
@@ -57,7 +57,7 @@
   {
     "hl_code": "HL-000006-product-v1",
     "seed": 24061006,
-    "preview_image": "/catalog/HL-000006.png",
+    "preview_image": "/catalog/HL-000006.webp",
     "source_asset": "assets/grok-inbox/images/HL-000006-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "咖啡40D平纹",
@@ -68,7 +68,7 @@
   {
     "hl_code": "HL-000007-product-v1",
     "seed": 24061007,
-    "preview_image": "/catalog/HL-000007.png",
+    "preview_image": "/catalog/HL-000007.webp",
     "source_asset": "assets/grok-inbox/images/HL-000007-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "海军蓝30D",
@@ -79,7 +79,7 @@
   {
     "hl_code": "HL-000008-product-v1",
     "seed": 24061008,
-    "preview_image": "/catalog/HL-000008.png",
+    "preview_image": "/catalog/HL-000008.webp",
     "source_asset": "assets/grok-inbox/images/HL-000008-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "炭灰20D后缝线",
@@ -90,7 +90,7 @@
   {
     "hl_code": "HL-000009-product-v1",
     "seed": 24061009,
-    "preview_image": "/catalog/HL-000009.png",
+    "preview_image": "/catalog/HL-000009.webp",
     "source_asset": "assets/grok-inbox/images/HL-000009-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "酒红30D罗纹",
@@ -101,7 +101,7 @@
   {
     "hl_code": "HL-000010-product-v1",
     "seed": 24061010,
-    "preview_image": "/catalog/HL-000010.png",
+    "preview_image": "/catalog/HL-000010.webp",
     "source_asset": "assets/grok-inbox/images/HL-000010-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "烟灰15D缎光",
@@ -112,7 +112,7 @@
   {
     "hl_code": "HL-000011-product-v1",
     "seed": 24061011,
-    "preview_image": "/catalog/HL-000011.png",
+    "preview_image": "/catalog/HL-000011.webp",
     "source_asset": "assets/grok-inbox/images/HL-000011-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "黑15D平纹薄透",
@@ -123,7 +123,7 @@
   {
     "hl_code": "HL-000012-product-v1",
     "seed": 24061012,
-    "preview_image": "/catalog/HL-000012.png",
+    "preview_image": "/catalog/HL-000012.webp",
     "source_asset": "assets/grok-inbox/images/HL-000012-product-v1.png",
     "cosplay_archetype": null,
     "hosiery": "白40D不透",
