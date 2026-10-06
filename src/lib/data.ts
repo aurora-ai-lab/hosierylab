@@ -44,6 +44,11 @@ export type HosieryItem = {
   history: string;
   confidence: "high" | "medium" | "low";
   sourceType: string;
+  imageUrl?: string;
+  assetSeed?: number;
+  assetHosiery?: string;
+  assetShoe?: string;
+  cosplayArchetype?: string;
 };
 
 export const hosiery: HosieryItem[] = [
@@ -97,8 +102,12 @@ export const hosiery: HosieryItem[] = [
   },
 ];
 
+export const allHosiery: HosieryItem[] = [...hosiery, ...generatedCatalog];
+
 export const lengthFilters = [
   ["all", "All lengths"], ["footie", "Footie / No-show"], ["ankle", "Ankle"], ["crew", "Crew"], ["mid_calf", "Mid-Calf"], ["knee_high", "Knee High"], ["over_the_knee", "Over-the-Knee"], ["thigh_high", "Thigh High"], ["waist", "Pantyhose / Tights"], ["full_body", "Body / Suspender"],
 ] as const;
 
-export const getHosiery = (slug: string) => hosiery.find((item) => item.slug === slug || item.code.toLowerCase() === slug.toLowerCase());
+export const getHosiery = (slug: string) => allHosiery.find((item) => item.slug === slug || item.code.toLowerCase() === slug.toLowerCase());
+import { generatedCatalog } from "./generatedCatalog";
+

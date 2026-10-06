@@ -3,11 +3,11 @@ import type { HosieryItem } from "@/lib/data";
 import { LegDiagram } from "./LegDiagram";
 
 export function HosieryCard({ item, showCompare = true }: { item: HosieryItem; showCompare?: boolean }) {
+  const imageUrl = item.imageUrl ?? (Number(item.code.slice(3)) <= 12 ? `/catalog/${item.code}.webp` : undefined);
   return (
     <article className="specimen-card">
       <Link href={`/hosiery/${item.slug}`} className="card-visual">
-        <img className="card-image" src={`/catalog/${item.code}.webp`} alt={`${item.name} visual reference`} loading="lazy" />
-        <div className="card-image-fallback"><LegDiagram item={item} compact /></div>
+        {imageUrl ? <img className="card-image" src={imageUrl} alt={`${item.name} visual reference`} loading="lazy" /> : <div className="card-image-fallback visible"><LegDiagram item={item} compact /></div>}
         <div className="card-badge">{item.origin === "real_sku" ? "REAL SKU" : "HL STANDARD"}</div>
       </Link>
       <div className="card-body">

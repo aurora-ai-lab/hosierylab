@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { hosiery, lengthFilters } from "@/lib/data";
+import { allHosiery, lengthFilters } from "@/lib/data";
 import { HosieryCard } from "./HosieryCard";
 
 export function HosieryExplorer() {
@@ -12,7 +12,7 @@ export function HosieryExplorer() {
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const filtered = hosiery.filter((item) => {
+    const filtered = allHosiery.filter((item) => {
       const haystack = [item.name, item.code, item.lengthLabel, item.colorLabel, item.material.join(" "), item.finish, item.knit, item.motif].join(" ").toLowerCase();
       return (!q || haystack.includes(q)) && (length === "all" || item.lengthClass === length) && (opacity === "all" || item.opacity.toLowerCase().replace("-", " ") === opacity);
     });
