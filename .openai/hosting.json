@@ -1,8 +1,5 @@
 {
   "project_id": "appgprj_6ac523952d248191a1f2bd9e5dd9b720",
-  "site_slug": "hosierylab",
-  "expected_url": "https://hosierylab.oyaln-ulkycurpmj.chatgpt.site",
-  "title": "HosieryLab",
   "static": {
     "directory": "out",
     "not_found_handling": "404-page"
