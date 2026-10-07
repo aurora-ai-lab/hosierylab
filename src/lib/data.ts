@@ -116,16 +116,17 @@ export const hosiery: HosieryItem[] = [
   },
   {
     code: "HL-A000012", slug: "standard-bodystocking-30d-black", name: "40D 纯白连裤袜 · 桌沿伸腿坐姿", origin: "standard_variant", isSynthetic: true, brand: "HosieryLab Standard",
-    lengthClass: "full_body", lengthLabel: "Body / Suspender Tights", coverage: "Toe → Shoulder", topPosition: "Shoulder", garmentType: "Bodystocking", foot: "Full Foot", toe: "Sheer Toe", heel: "Tube", topBand: "Body Straps", support: "Body Straps", denier: 30, opacity: "Semi-sheer", colorFamily: "Black", colorLabel: "Deep Black", hex: "#141416", material: ["Nylon / Polyamide", "Elastane"], finish: "Glossy", knit: "Mesh", motif: "None", season: ["All-season"], occasion: ["Editorial", "Performance"], style: ["Avant-garde", "Lingerie"], visualEffect: ["Layering", "Sheen"], description: "A full-body reference that demonstrates why construction must remain separate from length naming.", visualNotes: "The shoulder and body straps are structural; do not collapse this into Pantyhose/Tights.", history: "Bodystocking construction extends hosiery into a continuous body layer.", confidence: "high", sourceType: "hosierylab_standard_variant"
+    lengthClass: "full_body", lengthLabel: "Bodystocking", coverage: "Toe → Shoulder", topPosition: "Shoulder", garmentType: "Bodystocking", foot: "Full Foot", toe: "Sheer Toe", heel: "Tube", topBand: "Body Straps", support: "Body Straps", denier: 30, opacity: "Semi-sheer", colorFamily: "Black", colorLabel: "Deep Black", hex: "#141416", material: ["Nylon / Polyamide", "Elastane"], finish: "Glossy", knit: "Mesh", motif: "None", season: ["All-season"], occasion: ["Editorial", "Performance"], style: ["Avant-garde", "Lingerie"], visualEffect: ["Layering", "Sheen"], description: "A full-body reference that demonstrates why construction must remain separate from length naming.", visualNotes: "The shoulder and body straps are structural; do not collapse this into Pantyhose/Tights.", history: "Bodystocking construction extends hosiery into a continuous body layer.", confidence: "high", sourceType: "hosierylab_standard_variant"
   },
 ];
 
 export const allHosiery: HosieryItem[] = [...hosiery, ...generatedCatalog];
 
 export const lengthFilters = [
-  ["all", "All lengths"], ["footie", "Footie / No-show"], ["ankle", "Ankle"], ["crew", "Crew"], ["mid_calf", "Mid-Calf"], ["knee_high", "Knee High"], ["over_the_knee", "Over-the-Knee"], ["thigh_high", "Thigh High"], ["waist", "Pantyhose / Tights"], ["full_body", "Body / Suspender"],
+  ["all", "All lengths"], ["footie", "Footie / No-show"], ["ankle", "Ankle"], ["crew", "Crew"], ["mid_calf", "Mid-Calf"], ["knee_high", "Knee High"], ["over_the_knee", "Over-the-Knee"], ["thigh_high", "Thigh High"], ["waist", "Pantyhose / Tights"], ["full_body", "Bodystocking"],
 ] as const;
 
 export const getHosiery = (slug: string) => allHosiery.find((item) => item.slug === slug || item.code.toLowerCase() === slug.toLowerCase());
 import { generatedCatalog } from "./generatedCatalog";
+
 
