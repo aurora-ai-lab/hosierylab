@@ -23,8 +23,6 @@ def metadata_entries():
         if meta.get("image_status") != "rendered":
             continue
         number = int(re.search(r"HL-(\d{6})-", path.name).group(1))
-        if number <= 200:
-            continue
         code = f"HL-{number:06d}"
         hosiery = str(meta.get("hosiery") or meta.get("hosiery_vi") or "Hosiery reference")
         shoe = str(meta.get("shoe") or "Footwear context")
@@ -33,6 +31,7 @@ def metadata_entries():
         denier = int(denier_match.group(1)) if denier_match else None
         color = "Jet Black" if "黑" in hosiery or "đen" in hosiery else "Natural"
         hex_value = "#171719" if color == "Jet Black" else "#a8755d"
+        category = str(meta.get("category") or "anime")
         entry = {
             "code": code,
             "slug": f"rendered-{number:06d}",
@@ -73,7 +72,10 @@ def metadata_entries():
             "assetHosiery": hosiery,
             "assetShoe": shoe,
             "cosplayArchetype": outfit,
+            "category": category,
         }
+        if category == "anime":
+            entry["style"] = ["Anime", "Archive"]
         entries.append(entry)
     return entries
 
@@ -91,8 +93,6 @@ def sync():
         if "HL-A" in path.name:
             continue
         number = int(re.search(r"HL-(\d{6})-", path.name).group(1))
-        if number <= 12:
-            continue
         output = PUBLIC_CATALOG / f"HL-{number:06d}.webp"
         with Image.open(path) as image:
             image.convert("RGB").resize((900, 1600), Image.Resampling.LANCZOS).save(output, "WEBP", quality=80, method=6)
