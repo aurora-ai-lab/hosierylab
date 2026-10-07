@@ -69,7 +69,7 @@ export function HosieryExplorer() {
   const [opacity, setOpacity] = useState("all");
   const [color, setColor] = useState("all");
   const [category, setCategory] = useState("all");
-  const [reviewedOnly, setReviewedOnly] = useState(true);
+  const [reviewedOnly, setReviewedOnly] = useState(false);
   const [sort, setSort] = useState("code");
 
   useEffect(() => {
@@ -82,7 +82,7 @@ export function HosieryExplorer() {
     setOpacity(params.get("op") ?? params.get("opacity") ?? "all");
     setColor(params.get("color") ?? "all");
     setCategory(params.get("category") ?? "all");
-    setReviewedOnly(params.get("reviewed") !== "0");
+    setReviewedOnly(params.get("reviewed") === "1");
   }, []);
 
   const results = useMemo(() => {
