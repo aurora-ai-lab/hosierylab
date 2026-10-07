@@ -5,7 +5,7 @@ const baseUrl = "https://hosierylab.com";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["/", "/hosiery", "/compare", "/history", "/about/sources"].map((path) => ({
+  const pages = ["/", "/hosiery", "/compare", "/history", "/about/sources", "/terms"].map((path) => ({
     url: `${baseUrl}${path}`,
     changeFrequency: "weekly" as const,
     priority: path === "/" ? 1 : 0.7,
