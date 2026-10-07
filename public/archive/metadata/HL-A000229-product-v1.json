@@ -1,0 +1,43 @@
+{
+  "hl_code": "HL-A000229-product-v1",
+  "type": "product",
+  "version": "v1",
+  "date": "2026-10-06",
+  "model": "Grok Imagine",
+  "aspect_ratio": "9:16",
+  "prompt_language": "vi",
+  "outfit": "黑白女仆围裙短裙",
+  "outfit_vi": "đồ hầu gái đen trắng, tạp dề trắng, váy ngắn đen",
+  "shoe": "giày Mary Jane đen",
+  "hosiery": "酒红30D罗纹",
+  "hosiery_vi": "tất đỏ rượu 30 denier, dệt gân",
+  "phone": "bạc",
+  "positive_prompt": "Ảnh iPhone 9:16 siêu thực. Một phụ nữ Đông Á trưởng thành, rõ ràng 24 tuổi, tại hội chợ truyện tranh, dáng người trẻ trưởng thành. Ngồi trên mép bàn, máy ảnh thấp gần sàn, một chân duỗi về phía ống kính, giày Mary Jane đen lớn ở tiền cảnh. Điện thoại bạc che kín mắt và mặt. Trang phục: đồ hầu gái đen trắng, tạp dề trắng, váy ngắn đen. Tất: tất đỏ rượu 30 denier, dệt gân, thấy kết cấu dệt và độ trong hợp lý. Hội trường triển lãm phía sau. Trông 24 tuổi, không trẻ hơn. Không chữ, không khỏa thân.",
+  "negative_prompt": "áo sơ mi công sở, blazer, váy công sở, trang phục đường phố, thời trang thường ngày, anime, manga, CGI, ngoại hình vị thành niên, trẻ em, khỏa thân, chữ, watermark, anime, manga, minh họa, CGI, ngoại hình vị thành niên, trẻ em, thiếu niên, khỏa thân, nhiều ngón tay, bàn chân biến dạng, chữ, watermark",
+  "image_status": "rendered",
+  "is_synthetic": true,
+  "age": "24 adult",
+  "seed": 24061229,
+  "checkpoint": "z_image_turbo_nvfp4.safetensors",
+  "workflow": "Z-image超极速文生图（NVFP4 50系显卡专用，40系可兼容运行）.json",
+  "resolution_base": "720x1280",
+  "sampler": "euler",
+  "scheduler": "simple",
+  "steps": 9,
+  "cfg": 1,
+  "denoise": 1,
+  "cosplay_archetype": "黑白女仆围裙短裙",
+  "cosplay_parts": [
+    "đồ hầu gái đen trắng, tạp dề trắng, váy ngắn đen",
+    "anime cosplay accessory",
+    "character footwear"
+  ],
+  "output_path": "E:\\AI\\Projects\\hosierylab\\assets\\grok-inbox\\images\\HL-A000229-product-v1.png",
+  "rendered_size": [
+    1440,
+    2560
+  ],
+  "comfyui_prompt_id": "d8cdc3f1-f986-4f97-99f3-fbcd65d2f13d",
+  "display_name": "30D 酒红连裤袜 · 桌沿伸腿坐姿",
+  "name": "30D 酒红连裤袜 · 桌沿伸腿坐姿"
+}

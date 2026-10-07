@@ -1,0 +1,34 @@
+{
+  "hl_code": "HL-A000002-product-v1",
+  "seed": 24061002,
+  "checkpoint": "z_image_turbo_nvfp4.safetensors",
+  "workflow": "Z-image超极速文生图（NVFP4 50系显卡专用，40系可兼容运行）.json",
+  "positive_prompt": "Ảnh chụp iPhone siêu thực theo khung dọc 9:16, ánh sáng hội trường bình thường tại một hội chợ truyện tranh. Một phụ nữ Đông Á trưởng thành rõ ràng 24 tuổi, diện cosplay Cardcaptor Sakura dễ nhận ra với mũ nồi màu hồng, tay áo phồng và trâm lông vũ; váy hồng nhiều lớp, nơ lớn, đũa phép ngôi sao đi kèm đầy đủ, không phải đồ thường ngày. Cô ngồi trên mép bàn, máy ảnh đặt rất thấp gần sàn, một chân duỗi về phía ống kính, giày búp bê đỏ có quai ngang và đế dày ở tiền cảnh lớn hơn. Điện thoại thông minh dựng dọc áp sát máy ảnh, che hoàn toàn khuôn mặt từ trán đến cằm; không thấy mắt, lông mày, mũi, miệng hay cằm, chỉ thấy tóc hai bên đầu. tất da màu đỏ rượu vang 40 denier, dệt gân dọc, bán đục, bề mặt mờ, chấm bi nhỏ; thể hiện rõ độ trong, sợi dệt và bề mặt của tất. Bối cảnh gian hàng cosplay đông người nhưng không có chữ hay logo; không khỏa thân, không gợi dục, không phong cách hoạt hình, chất ảnh điện thoại chân thực.",
+  "negative_prompt": "áo sơ mi công sở, blazer, váy công sở, trang phục đường phố, thời trang thường ngày, anime, manga, CGI, ngoại hình vị thành niên, trẻ em, khỏa thân, chữ, watermark, minh họa, thiếu ngón tay, bàn chân biến dạng, khuôn mặt lộ ra ngoài điện thoại, người dưới 18 tuổi, trang phục đơn giản, nền trống",
+  "cosplay_archetype": "Cardcaptor Sakura",
+  "cosplay_parts": [
+    "mũ nồi màu hồng",
+    "tay áo phồng",
+    "trâm lông vũ"
+  ],
+  "hosiery": "tất da màu đỏ rượu vang 40 denier, dệt gân dọc, bán đục, bề mặt mờ, chấm bi nhỏ",
+  "shoe": "giày búp bê đỏ có quai ngang và đế dày",
+  "prompt_language": "vi",
+  "image_status": "rendered",
+  "is_synthetic": true,
+  "aspect_ratio": "9:16",
+  "resolution_base": "720x1280",
+  "sampler": "euler",
+  "scheduler": "simple",
+  "steps": 9,
+  "cfg": 1,
+  "denoise": 1,
+  "output_path": "E:\\AI\\Projects\\hosierylab\\assets\\grok-inbox\\images\\HL-A000002-product-v1.png",
+  "rendered_size": [
+    1440,
+    2560
+  ],
+  "comfyui_prompt_id": "48147ea6-d34f-4ae0-b2b5-99854a056587",
+  "display_name": "40D 酒红连裤袜 · 桌沿伸腿坐姿",
+  "name": "40D 酒红连裤袜 · 桌沿伸腿坐姿"
+}

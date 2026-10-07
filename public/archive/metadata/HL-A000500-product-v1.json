@@ -1,0 +1,43 @@
+{
+  "hl_code": "HL-A000500-product-v1",
+  "type": "product",
+  "version": "v1",
+  "date": "2026-10-06",
+  "model": "Grok Imagine",
+  "aspect_ratio": "9:16",
+  "prompt_language": "vi",
+  "outfit": "森林制服橄榄绿外套棕裙",
+  "outfit_vi": "áo khoác olive, váy xếp ly nâu",
+  "shoe": "giày loafer xanh lá",
+  "hosiery": "烟灰15D缎光",
+  "hosiery_vi": "tất xám khói 15 denier, ánh satin",
+  "phone": "xanh đậm",
+  "positive_prompt": "Ảnh iPhone 9:16 siêu thực. Một phụ nữ Đông Á trưởng thành, rõ ràng 24 tuổi, tại hội chợ truyện tranh, dáng người trẻ trưởng thành. Ngồi trên mép bàn, máy ảnh thấp gần sàn, một chân duỗi về phía ống kính, giày loafer xanh lá lớn ở tiền cảnh. Điện thoại xanh đậm che kín mắt và mặt. Trang phục: áo khoác olive, váy xếp ly nâu. Tất: tất xám khói 15 denier, ánh satin, thấy kết cấu dệt và độ trong hợp lý. Hội trường triển lãm phía sau. Trông 24 tuổi, không trẻ hơn. Không chữ, không khỏa thân.",
+  "negative_prompt": "áo sơ mi công sở, blazer, váy công sở, trang phục đường phố, thời trang thường ngày, anime, manga, CGI, ngoại hình vị thành niên, trẻ em, khỏa thân, chữ, watermark, anime, manga, minh họa, CGI, ngoại hình vị thành niên, trẻ em, thiếu niên, khỏa thân, nhiều ngón tay, bàn chân biến dạng, chữ, watermark",
+  "image_status": "rendered",
+  "is_synthetic": true,
+  "age": "24 adult",
+  "seed": 24061500,
+  "checkpoint": "z_image_turbo_nvfp4.safetensors",
+  "workflow": "Z-image超极速文生图（NVFP4 50系显卡专用，40系可兼容运行）.json",
+  "resolution_base": "720x1280",
+  "sampler": "euler",
+  "scheduler": "simple",
+  "steps": 9,
+  "cfg": 1,
+  "denoise": 1,
+  "cosplay_archetype": "森林制服橄榄绿外套棕裙",
+  "cosplay_parts": [
+    "áo khoác olive, váy xếp ly nâu",
+    "anime cosplay accessory",
+    "character footwear"
+  ],
+  "output_path": "E:\\AI\\Projects\\hosierylab\\assets\\grok-inbox\\images\\HL-A000500-product-v1.png",
+  "rendered_size": [
+    1440,
+    2560
+  ],
+  "comfyui_prompt_id": "657d521a-400b-4a87-a5e4-1c7a5b31f32e",
+  "display_name": "15D 烟灰连裤袜 · 桌沿伸腿坐姿",
+  "name": "15D 烟灰连裤袜 · 桌沿伸腿坐姿"
+}
