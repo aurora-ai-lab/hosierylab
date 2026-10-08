@@ -1,6 +1,19 @@
-# HosieryLab
+# HosieryLab — Visual Hosiery Reference & Prompt Taxonomy
 
-HosieryLab is the visual intelligence database for hosiery. V1 is intentionally scoped to hosiery only: length, coverage, construction, Denier, opacity, color, material, finish, knit, pattern, toe, heel, top band, provenance and comparison.
+HosieryLab is an open reference system for **hosiery, pantyhose, tights and stockings**. It turns visual details into consistent, prompt-ready vocabulary for designers, stylists, fashion researchers and AI image creators.
+
+The catalog describes hosiery by denier, opacity, color, coverage, garment type, knit, finish, motif, toe, heel and top band. Each record can be used as a visual reference or as a reusable hosiery prompt layer.
+
+## Why this exists
+
+Generic labels such as “black tights” hide the details that change an image: 5D versus 40D, sheer versus opaque coverage, matte versus satin finish, plain versus rib-knit construction, and pantyhose versus suspender stockings. HosieryLab makes those variables searchable and comparable.
+
+## Public resources
+
+- [Hosiery taxonomy](TAXONOMY.md) — shared vocabulary for denier, coverage, construction and finish
+- [Prompt guide](PROMPT-GUIDE.md) — how to separate a full scene prompt from a reusable hosiery description
+- [Live catalog](https://hosierylab.com/hosiery) — searchable visual reference
+- [Privacy policy](https://hosierylab.com/privacy) · [Terms](https://hosierylab.com/terms)
 
 ## Run locally
 
@@ -9,15 +22,16 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open `http://localhost:3000`.
 
-## Current V1 routes
+## Repository scope
 
-- `/` — narrative homepage and visual experiment
-- `/hosiery` — local specimen catalog with search and filters
-- `/hosiery/[slug]` — specimen detail and generated prompts
-- `/compare` — side-by-side comparison (up to four)
-- `/history` — starter History Nodes
-- `/about/sources` — provenance and source policy
+This repository contains the website source, taxonomy, interface and non-sensitive catalog indexes. Generated images and private prompt archives are stored outside GitHub and are intentionally excluded from this repository.
 
-The current UI uses 12 local standard specimens in `src/lib/data.ts`. PostgreSQL/pgvector, Cloudflare R2 and the data-as-code import pipeline are the next implementation layer.
+## Keywords
+
+`hosiery` · `pantyhose` · `tights` · `stockings` · `denier` · `sheer hosiery` · `opaque tights` · `fishnet` · `hosiery prompt` · `AI image prompt` · `visual reference` · `fashion research`
+
+## License
+
+See [LICENSE](LICENSE) for the current project terms.
