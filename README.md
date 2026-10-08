@@ -15,6 +15,11 @@ Generic labels such as “black tights” hide the details that change an image:
 - [Live catalog](https://hosierylab.com/hosiery) — searchable visual reference
 - [Privacy policy](https://hosierylab.com/privacy) · [Terms](https://hosierylab.com/terms)
 
+## Contact
+
+- X: [@minaoneday](https://x.com/minaoneday)
+- Email: [hosierylab@agentmail.to](mailto:hosierylab@agentmail.to)
+
 ## Run locally
 
 ```bash
