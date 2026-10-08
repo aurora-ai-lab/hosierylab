@@ -1,42 +1,60 @@
-# HosieryLab — Visual Hosiery Reference & Prompt Taxonomy
+<div align="center">
 
-HosieryLab is an open reference system for **hosiery, pantyhose, tights and stockings**. It turns visual details into consistent, prompt-ready vocabulary for designers, stylists, fashion researchers and AI image creators.
+# HOSIERY<span>LAB</span>
 
-The catalog describes hosiery by denier, opacity, color, coverage, garment type, knit, finish, motif, toe, heel and top band. Each record can be used as a visual reference or as a reusable hosiery prompt layer.
+**Every pair, under the same light.**
 
-## Why this exists
+一个面向设计师、造型师与 AI 角色创作者的丝袜视觉参考与提示词分类系统。
 
-Generic labels such as “black tights” hide the details that change an image: 5D versus 40D, sheer versus opaque coverage, matte versus satin finish, plain versus rib-knit construction, and pantyhose versus suspender stockings. HosieryLab makes those variables searchable and comparable.
+[在线目录](https://hosierylab.com/hosiery) · [使用方法](https://hosierylab.com/guide) · [隐私政策](https://hosierylab.com/privacy)
 
-## Public resources
+</div>
 
-- [Hosiery taxonomy](TAXONOMY.md) — shared vocabulary for denier, coverage, construction and finish
-- [Prompt guide](PROMPT-GUIDE.md) — how to separate a full scene prompt from a reusable hosiery description
-- [Live catalog](https://hosierylab.com/hosiery) — searchable visual reference
-- [Privacy policy](https://hosierylab.com/privacy) · [Terms](https://hosierylab.com/terms)
+<br />
 
-## Contact
+## 项目简介
 
-- X: [@minaoneday](https://x.com/minaoneday)
-- Email: [hosierylab@agentmail.to](mailto:hosierylab@agentmail.to)
+HosieryLab 把丝袜拆成可观察、可检索、可复用的变量：D 数、透明度、颜色、覆盖范围、袜型、织法、光泽、图案、脚尖、脚跟与袜口结构。每条记录都可以作为视觉参考，也可以复制成单独的丝袜提示词层。
 
-## Run locally
+通用的“黑丝”标签往往不足以复现画面；5D 与 40D、哑光与缎光、连裤袜与吊带袜会直接改变生成结果。这个项目为这些差异建立统一词汇和浏览方式。
+
+## 公开内容
+
+| 内容 | 入口 |
+| --- | --- |
+| 在线丝袜目录 | [hosierylab.com/hosiery](https://hosierylab.com/hosiery) |
+| 提示词使用指南 | [PROMPT-GUIDE.md](PROMPT-GUIDE.md) |
+| 丝袜分类词典 | [TAXONOMY.md](TAXONOMY.md) |
+| 方法与来源 | [在线页面](https://hosierylab.com/about/sources) |
+| 使用条款 | [在线页面](https://hosierylab.com/terms) |
+
+## 主要功能
+
+- 按长度、透明度、颜色、D 数、织法、光泽和图案筛选
+- 详情页拆分完整提示词与丝袜提示词
+- 统一的中英文页面入口
+- 结构化记录与可复用的提示词分类
+- 生成图片与私有提示词归档分离存储
+
+## 本地运行
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+打开 <http://localhost:3000>。
 
-## Repository scope
+## 仓库范围
 
-This repository contains the website source, taxonomy, interface and non-sensitive catalog indexes. Generated images and private prompt archives are stored outside GitHub and are intentionally excluded from this repository.
+仓库包含网站源码、分类词典、界面和非敏感目录索引。生成图片、私有提示词归档和运行凭证不放入 GitHub。
 
-## Keywords
+## 联系方式
 
-`hosiery` · `pantyhose` · `tights` · `stockings` · `denier` · `sheer hosiery` · `opaque tights` · `fishnet` · `hosiery prompt` · `AI image prompt` · `visual reference` · `fashion research`
+- X：[@minaoneday](https://x.com/minaoneday)
+- Email：[hosierylab@agentmail.to](mailto:hosierylab@agentmail.to)
+- GitHub：[aurora-ai-lab/hosierylab](https://github.com/aurora-ai-lab/hosierylab)
 
 ## License
 
-See [LICENSE](LICENSE) for the current project terms.
+详见 [LICENSE](LICENSE)。
