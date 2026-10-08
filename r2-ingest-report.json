@@ -1,0 +1,311 @@
+{
+  "bucket": "fashion-assets",
+  "checked": 20,
+  "publishable": 20,
+  "blocked": 0,
+  "missing": [],
+  "warnings": [
+    {
+      "code": "HL-A000001",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000002",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000003",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000004",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000005",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000006",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000007",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000008",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000009",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000010",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000011",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000012",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000013",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000014",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000015",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000016",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000017",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000018",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000019",
+      "warning": "facts_hash_missing"
+    },
+    {
+      "code": "HL-A000020",
+      "warning": "facts_hash_missing"
+    }
+  ],
+  "records": [
+    {
+      "code": "HL-A000001",
+      "category": "cosplay",
+      "image": "images/HL-A000001-product-v1.png",
+      "prompt": "prompts/HL-A000001-product-v1.md",
+      "metadata": "metadata/HL-A000001-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000002",
+      "category": "cosplay",
+      "image": "images/HL-A000002-product-v1.png",
+      "prompt": "prompts/HL-A000002-product-v1.md",
+      "metadata": "metadata/HL-A000002-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000003",
+      "category": "anime",
+      "image": "images/HL-A000003-product-v1.png",
+      "prompt": "prompts/HL-A000003-product-v1.md",
+      "metadata": "metadata/HL-A000003-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000004",
+      "category": "anime",
+      "image": "images/HL-A000004-product-v1.png",
+      "prompt": "prompts/HL-A000004-product-v1.md",
+      "metadata": "metadata/HL-A000004-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000005",
+      "category": "anime",
+      "image": "images/HL-A000005-product-v1.png",
+      "prompt": "prompts/HL-A000005-product-v1.md",
+      "metadata": "metadata/HL-A000005-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000006",
+      "category": "anime",
+      "image": "images/HL-A000006-product-v1.png",
+      "prompt": "prompts/HL-A000006-product-v1.md",
+      "metadata": "metadata/HL-A000006-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000007",
+      "category": "anime",
+      "image": "images/HL-A000007-product-v1.png",
+      "prompt": "prompts/HL-A000007-product-v1.md",
+      "metadata": "metadata/HL-A000007-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000008",
+      "category": "anime",
+      "image": "images/HL-A000008-product-v1.png",
+      "prompt": "prompts/HL-A000008-product-v1.md",
+      "metadata": "metadata/HL-A000008-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000009",
+      "category": "anime",
+      "image": "images/HL-A000009-product-v1.png",
+      "prompt": "prompts/HL-A000009-product-v1.md",
+      "metadata": "metadata/HL-A000009-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000010",
+      "category": "anime",
+      "image": "images/HL-A000010-product-v1.png",
+      "prompt": "prompts/HL-A000010-product-v1.md",
+      "metadata": "metadata/HL-A000010-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000011",
+      "category": "anime",
+      "image": "images/HL-A000011-product-v1.png",
+      "prompt": "prompts/HL-A000011-product-v1.md",
+      "metadata": "metadata/HL-A000011-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000012",
+      "category": "anime",
+      "image": "images/HL-A000012-product-v1.png",
+      "prompt": "prompts/HL-A000012-product-v1.md",
+      "metadata": "metadata/HL-A000012-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000013",
+      "category": "anime",
+      "image": "images/HL-A000013-product-v1.png",
+      "prompt": "prompts/HL-A000013-product-v1.md",
+      "metadata": "metadata/HL-A000013-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000014",
+      "category": "anime",
+      "image": "images/HL-A000014-product-v1.png",
+      "prompt": "prompts/HL-A000014-product-v1.md",
+      "metadata": "metadata/HL-A000014-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000015",
+      "category": "anime",
+      "image": "images/HL-A000015-product-v1.png",
+      "prompt": "prompts/HL-A000015-product-v1.md",
+      "metadata": "metadata/HL-A000015-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000016",
+      "category": "anime",
+      "image": "images/HL-A000016-product-v1.png",
+      "prompt": "prompts/HL-A000016-product-v1.md",
+      "metadata": "metadata/HL-A000016-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000017",
+      "category": "anime",
+      "image": "images/HL-A000017-product-v1.png",
+      "prompt": "prompts/HL-A000017-product-v1.md",
+      "metadata": "metadata/HL-A000017-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000018",
+      "category": "anime",
+      "image": "images/HL-A000018-product-v1.png",
+      "prompt": "prompts/HL-A000018-product-v1.md",
+      "metadata": "metadata/HL-A000018-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000019",
+      "category": "anime",
+      "image": "images/HL-A000019-product-v1.png",
+      "prompt": "prompts/HL-A000019-product-v1.md",
+      "metadata": "metadata/HL-A000019-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    },
+    {
+      "code": "HL-A000020",
+      "category": "anime",
+      "image": "images/HL-A000020-product-v1.png",
+      "prompt": "prompts/HL-A000020-product-v1.md",
+      "metadata": "metadata/HL-A000020-product-v1.json",
+      "image_status": "rendered",
+      "has_full_prompt": true,
+      "has_snippet": false,
+      "facts_hash": null
+    }
+  ]
+}

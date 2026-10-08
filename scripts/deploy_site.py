@@ -6,12 +6,14 @@ PROJECT = Path(r"E:\AI\Projects\hosierylab")
 ARCHIVE = Path(r"E:\AI\Temp") / f"hosierylab-{sys.argv[1]}.tar.gz"
 KEY = Path(r"C:\Users\Administrator\.ssh\quantus_vast_50481064")
 RELEASE = sys.argv[1]
+PYTHON = Path(r"D:\ComfyUI-V9.5\python\python.exe")
 
 
 def run(args, cwd=None):
     subprocess.run(args, cwd=cwd, check=True)
 
 
+run([str(PYTHON), str(PROJECT / "scripts" / "self_check_catalog.py")], PROJECT)
 run(["npm.cmd", "run", "build"], PROJECT)
 run(["tar", "-czf", str(ARCHIVE), "-C", str(PROJECT / "out"), "."])
 run(["scp", "-i", str(KEY), "-o", "StrictHostKeyChecking=no", str(ARCHIVE), f"root@209.74.79.244:/tmp/{ARCHIVE.name}"])
@@ -23,3 +25,4 @@ remote = (
 )
 run(["ssh", "-i", str(KEY), "-o", "StrictHostKeyChecking=no", "root@209.74.79.244", remote])
 print(f"deployed {RELEASE}")
+

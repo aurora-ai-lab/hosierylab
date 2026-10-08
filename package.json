@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/sanitize_public_metadata.mjs",
     "start": "next start",
     "lint": "eslint"
   },

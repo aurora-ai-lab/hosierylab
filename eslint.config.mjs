@@ -12,7 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "public/prototype/vendor/**",
+    "ui_redesign/prototype/vendor/**",
   ]),
 ]);
 
 export default eslintConfig;
+

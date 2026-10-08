@@ -1,7 +1,11 @@
 "use client";
+/* eslint-disable react-hooks/set-state-in-effect */
 
-import { useEffect, useMemo, useState } from "react";
-import { allHosiery, catalogCategoryLabels, getCatalogCategory, lengthFilters } from "@/lib/data";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { allHosiery, lengthFilters } from "@/lib/data";
+import { COLOR_CODES, type ColorCode } from "@/lib/color";
+import { localePath, type Locale } from "@/lib/i18n";
+import { typeName } from "@/lib/display";
 import { HosieryCard } from "./HosieryCard";
 
 const typeFilters = [
@@ -32,87 +36,94 @@ function opacityCode(value: string) {
   return value.toLowerCase().replace(/[ -]/g, "_");
 }
 
-function colorCode(item: (typeof allHosiery)[number]) {
-  const value = (item.colorFamily + " " + item.colorLabel).toLowerCase();
-  if (value.includes("black")) return "black";
-  if (value.includes("skin") || value.includes("natural") || value.includes("honey") || value.includes("nude")) return "skin_tone";
-  if (value.includes("white")) return "white";
-  if (value.includes("cream") || value.includes("ivory")) return "cream";
-  if (value.includes("grey") || value.includes("gray") || value.includes("charcoal") || value.includes("graphite")) return "grey";
-  if (value.includes("brown") || value.includes("coffee") || value.includes("mocha")) return "brown";
-  if (value.includes("navy")) return "navy";
-  if (value.includes("burgundy") || value.includes("wine")) return "burgundy";
-  if (value.includes("pink")) return "pink";
-  if (value.includes("purple")) return "purple";
-  if (value.includes("yellow")) return "yellow";
-  if (value.includes("green")) return "green";
-  if (value.includes("blue")) return "blue";
-  if (value.includes("red")) return "red";
-  return "multi";
-}
-
 function denierMatches(value: string, denier: number | null) {
   if (value === "all") return true;
-  if (value === "0-10") return denier !== null && denier <= 10;
-  if (value === "11-20") return denier !== null && denier >= 11 && denier <= 20;
-  if (value === "21-35") return denier !== null && denier >= 21 && denier <= 35;
-  if (value === "36-59") return denier !== null && denier >= 36 && denier <= 59;
-  if (value === "60-99") return denier !== null && denier >= 60 && denier <= 99;
-  return denier !== null && denier >= 100;
+  if (denier === null) return false;
+  if (value === "100+") return denier >= 100;
+  const match = value.match(/^(\d+)-(\d+)$/);
+  if (!match) return false;
+  const min = Number(match[1]);
+  const max = Number(match[2]);
+  return denier >= min && denier <= max;
 }
 
-export function HosieryExplorer() {
+export function HosieryExplorer({ locale = "zh" }: { locale?: Locale }) {
   const [query, setQuery] = useState("");
   const [length, setLength] = useState("all");
   const [type, setType] = useState("all");
   const [denier, setDenier] = useState("all");
   const [opacity, setOpacity] = useState("all");
   const [color, setColor] = useState("all");
-  const [category, setCategory] = useState("all");
-  const [reviewedOnly, setReviewedOnly] = useState(false);
   const [sort, setSort] = useState("code");
+  const initialized = useRef(false);
+  const colorCounts = useMemo(() => {
+    const counts = new Map<ColorCode, number>();
+    for (const item of allHosiery) counts.set(item.colorCode, (counts.get(item.colorCode) ?? 0) + 1);
+    return counts;
+  }, []);
+  const visibleColorFilters = colorFilters.filter(([value]) => value === "all" || (colorCounts.get(value) ?? 0) > 0);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const q = params.get("q") ?? "";
+    const qDenier = q.match(/^(\d+)D\+$/i)?.[1];
     setQuery(q);
     setLength(params.get("len") ?? params.get("length") ?? "all");
     setType(params.get("type") ?? "all");
-    setDenier(params.get("den") ?? (q === "≤10D" ? "0-10" : q === "11–20D" ? "11-20" : q === "40D+" ? "60-99" : "all"));
-    setOpacity(params.get("op") ?? params.get("opacity") ?? "all");
-    setColor(params.get("color") ?? "all");
-    setCategory(params.get("category") ?? "all");
-    setReviewedOnly(params.get("reviewed") === "1");
+    setDenier(params.get("denier") ?? params.get("den") ?? (q === "≤10D" ? "0-10" : q === "11–20D" ? "11-20" : qDenier ? `${qDenier}-999` : "all"));
+    setOpacity(params.get("opacity") ?? params.get("op") ?? "all");
+    const rawColor = params.get("color");
+    setColor(rawColor && COLOR_CODES.includes(rawColor as ColorCode) ? rawColor : "all");
+    initialized.current = true;
   }, []);
+
+  useEffect(() => {
+    if (!initialized.current) return;
+    const params = new URLSearchParams();
+    if (query.trim()) params.set("q", query.trim());
+    if (color !== "all") params.set("color", color);
+    if (denier !== "all") params.set("denier", denier);
+    if (length !== "all") params.set("length", length);
+    if (opacity !== "all") params.set("opacity", opacity);
+    if (type !== "all") params.set("type", type);
+    params.sort();
+    const search = params.toString();
+    const base = localePath(locale, "/hosiery");
+    window.history.replaceState(null, "", search ? `${base}?${search}` : base);
+  }, [query, color, denier, length, opacity, type, locale]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     const filtered = allHosiery.filter((item) => {
       const haystack = [item.name, item.code, item.lengthLabel, item.colorLabel, item.material.join(" "), item.finish, item.knit, item.motif].join(" ").toLowerCase();
-      return (!q || haystack.includes(q)) && (!reviewedOnly || item.confidence !== "low") && (category === "all" || getCatalogCategory(item) === category) && (length === "all" || item.lengthClass === length) && (type === "all" || typeCode(item) === type) && denierMatches(denier, item.denier) && (opacity === "all" || opacityCode(item.opacity) === opacity) && (color === "all" || colorCode(item) === color);
+      return (!q || haystack.includes(q)) && (length === "all" || item.lengthClass === length) && (type === "all" || typeCode(item) === type) && denierMatches(denier, item.denier) && (opacity === "all" || opacityCode(item.opacity) === opacity) && (color === "all" || item.colorCode === color);
     });
-    return [...filtered].sort((a, b) => sort === "denier" ? (a.denier ?? 999) - (b.denier ?? 999) : a.code.localeCompare(b.code));
-  }, [query, reviewedOnly, category, length, type, denier, opacity, color, sort]);
+    return sort === "denier" ? [...filtered].sort((a, b) => (a.denier ?? 999) - (b.denier ?? 999)) : filtered;
+  }, [query, length, type, denier, opacity, color, sort]);
 
   return (
     <div>
-      <div className="explore-toolbar">
-        <label className="search-input"><span>⌕</span><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search color, denier, material, style..." /></label>
-        <select value={sort} onChange={(e) => setSort(e.target.value)} aria-label="Sort results"><option value="code">Recently added</option><option value="denier">Denier: low to high</option></select>
+        <div className="explore-toolbar">
+        <label className="search-input"><span>⌕</span><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={locale === "en" ? "Search color, denier, material, style..." : "搜索颜色、D 数、材质、风格..."} /></label>
+        <select value={sort} onChange={(e) => setSort(e.target.value)} aria-label={locale === "en" ? "Sort results" : "排序结果"}><option value="code">{locale === "en" ? "Recently added" : "最近添加"}</option><option value="denier">{locale === "en" ? "Denier: low to high" : "D 数：从低到高"}</option></select>
       </div>
       <div className="filter-row">
-        <div className="filter-group"><span className="filter-label">Category</span>{(Object.keys(catalogCategoryLabels) as Array<keyof typeof catalogCategoryLabels>).map((value) => <button key={value} onClick={() => setCategory(value)} className={"filter-chip " + (category === value ? "active" : "")}>{catalogCategoryLabels[value]}</button>)}</div>
-        <div className="filter-group"><span className="filter-label">Length</span>{lengthFilters.map(([value, label]) => <button key={value} onClick={() => setLength(value)} className={"filter-chip " + (length === value ? "active" : "")}>{label}</button>)}</div>
-        <div className="filter-group"><span className="filter-label">Type</span>{typeFilters.map(([value, label]) => <button key={value} onClick={() => setType(value)} className={"filter-chip " + (type === value ? "active" : "")}>{label}</button>)}</div>
-        <div className="filter-group"><span className="filter-label">Denier</span>{denierFilters.map(([value, label]) => <button key={value} onClick={() => setDenier(value)} className={"filter-chip " + (denier === value ? "active" : "")}>{label}</button>)}</div>
-        <div className="filter-group"><span className="filter-label">Opacity</span>{opacityFilters.map(([value, label]) => <button key={value} onClick={() => setOpacity(value)} className={"filter-chip " + (opacity === value ? "active" : "")}>{label}</button>)}</div>
-        <div className="filter-group"><span className="filter-label">Color</span>{colorFilters.map(([value, label]) => <button key={value} onClick={() => setColor(value)} className={"filter-chip " + (color === value ? "active" : "")}>{label}</button>)}</div>
-        <div className="filter-group"><button onClick={() => setReviewedOnly((current) => !current)} className={"filter-chip " + (reviewedOnly ? "active" : "")} aria-pressed={reviewedOnly}>Reviewed only</button></div>
+        <div className="filter-group"><span className="filter-label">{locale === "en" ? "Length" : "长度"}</span>{lengthFilters.map(([value, label]) => <button key={value} onClick={() => setLength(value)} className={"filter-chip " + (length === value ? "active" : "")}>{locale === "en" ? label : ({ all: "全部长度", footie: "船袜 / 隐形袜", ankle: "踝袜", crew: "中筒袜", mid_calf: "小腿中部", knee_high: "及膝袜", over_the_knee: "过膝袜", thigh_high: "大腿袜", waist: "连裤袜 / 紧身袜", full_body: "连体袜" } as Record<string, string>)[value]}</button>)}</div>
+        <div className="filter-group"><span className="filter-label">{locale === "en" ? "Type" : "类型"}</span>{typeFilters.map(([value, label]) => <button key={value} onClick={() => setType(value)} className={"filter-chip " + (type === value ? "active" : "")}>{locale === "en" ? label : value === "all" ? "全部类型" : typeName(value, locale)}</button>)}</div>
+        <div className="filter-group"><span className="filter-label">{locale === "en" ? "Denier" : "D 数"}</span>{denierFilters.map(([value, label]) => <button key={value} onClick={() => setDenier(value)} className={"filter-chip " + (denier === value ? "active" : "")}>{label}</button>)}</div>
+        <div className="filter-group"><span className="filter-label">{locale === "en" ? "Opacity" : "透明度"}</span>{opacityFilters.map(([value, label]) => <button key={value} onClick={() => setOpacity(value)} className={"filter-chip " + (opacity === value ? "active" : "")}>{locale === "en" ? label : value === "all" ? "全部透明度" : label}</button>)}</div>
+        <div className="filter-group"><span className="filter-label">{locale === "en" ? "Color" : "颜色"}</span>{visibleColorFilters.map(([value, label]) => <button key={value} onClick={() => setColor(value)} className={"filter-chip " + (color === value ? "active" : "")}>{value === "all" ? (locale === "en" ? label : "全部颜色") : `${locale === "en" ? label : ({ black: "黑色", skin_tone: "肤色", white: "白色", grey: "灰色", brown: "棕色", navy: "藏青", burgundy: "酒红" } as Record<string, string>)[value] ?? label} · ${colorCounts.get(value) ?? 0}`}</button>)}</div>
       </div>
-      <div className="results-head"><span>{results.length} specimens</span><span>{reviewedOnly ? "Reviewed records only" : "Includes archive records · unreviewed records are labeled"}</span></div>
-      <div className="specimen-grid">{results.map((item) => <HosieryCard item={item} key={item.code} />)}</div>
-      {!results.length && <div className="empty-state">No specimens match this combination. Try another filter or turn off Reviewed only.</div>}
+      <div className="results-head"><span>{results.length.toLocaleString()} {locale === "en" ? "specimens" : "条记录"}</span><span>{locale === "en" ? "Each record includes image, full-body prompt, hosiery prompt and metadata" : "每条记录包含图片、全身提示词、丝袜提示词和元数据"}</span></div>
+      <div className="specimen-grid">{results.map((item) => <HosieryCard item={item} key={item.code} locale={locale} />)}</div>
+      {!results.length && <div className="empty-state">{locale === "en" ? "No specimens match this combination. Try another filter." : "没有符合条件的记录，换一个筛选试试。"}</div>}
     </div>
   );
 }
+
+
+
+
+
+
 

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HosieryLab 3D · 色板 Night Atelier (2026-10-07)</title>
+<!-- 离线可用：无 CDN、无外部字体。字体只用系统 fallback。 -->
+<style>
+:root{
+  --bg:#110C0D;--surface:#1A1315;--card:#241A1D;--line:#3A2A2E;
+  --text:#F2E8E0;--muted:#BBA79D;--faint:#8A7770;
+  --rouge:#C42E47;--rouge-hi:#E04A62;--oxblood:#5E1220;
+  --champagne:#D9B68C;--champagne-hi:#FFF4E6;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC",serif;
+  --display:"Cormorant Garamond","Didot","Bodoni 72",Georgia,serif;
+  --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.6 var(--sans)}
+header{padding:48px 6vw 24px;border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 90% at 20% 0%,#2a1a1d 0%,var(--bg) 60%)}
+h1{font:500 34px/1.2 var(--serif);letter-spacing:.04em;margin:0 0 6px}
+h1 .dot{color:var(--rouge)}
+h2{font:500 22px/1.3 var(--serif);letter-spacing:.04em;margin:0 0 4px}
+.sub{color:var(--muted);margin:0}
+section{padding:36px 6vw;border-bottom:1px solid var(--line)}
+.note{color:var(--faint);font-size:12px;margin:4px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.sw{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sw .chip{height:84px;display:flex;align-items:flex-end;padding:8px 10px;font:600 12px var(--sans)}
+.sw .meta{padding:8px 10px 10px;font-size:12px;color:var(--muted)}
+.sw .meta b{color:var(--text);font-weight:600;display:block;font-size:13px}
+.sw code{font:12px ui-monospace,monospace;color:var(--champagne)}
+.day{background:#F4EBE4;color:#1C1214}
+.day .sw{background:#FBF6F1;border-color:#E2D3CA}
+.day .sw .meta{color:#6B5751}.day .sw .meta b{color:#1C1214}.day .sw code{color:#9C1C31}
+.day h2{color:#1C1214}.day .note{color:#6B5751}
+.legs{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.leg{display:flex;flex-direction:column;align-items:center;gap:4px}
+.leg canvas{display:block;border-radius:6px}
+.leg .lbl{font:italic 500 20px/1 var(--display);color:var(--text)}
+.leg .lbl2{font-size:11px;color:var(--muted);text-align:center;max-width:96px;line-height:1.3}
+.leg .code{font:10px ui-monospace,monospace;color:var(--faint)}
+.stage{background:radial-gradient(80% 100% at 35% 0%,#2a1d1f 0%,var(--surface) 45%,var(--bg) 100%);
+  border:1px solid var(--line);border-radius:14px;padding:22px 18px 14px;position:relative}
+.stage .plinth{height:10px;border-radius:0 0 50% 50%/0 0 100% 100%}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+button.c{font:13px var(--sans);color:var(--muted);background:transparent;border:1px solid var(--line);
+  border-radius:999px;padding:6px 14px;cursor:pointer;transition:all .18s cubic-bezier(.5,0,.1,1)}
+button.c:hover{color:var(--text);border-color:var(--champagne)}
+button.c.on{background:var(--oxblood);border-color:var(--rouge);color:var(--text)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.b1{background:var(--rouge);color:var(--text);border:0;border-radius:10px;padding:12px 22px;font:600 14px var(--sans)}
+.b2{background:transparent;color:var(--champagne);border:1px solid var(--champagne);border-radius:10px;padding:12px 22px;font:600 14px var(--sans)}
+.b3{background:var(--champagne);color:var(--bg);border:0;border-radius:10px;padding:12px 22px;font:600 14px var(--sans)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.bar div{display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text);white-space:nowrap;overflow:hidden}
+table{border-collapse:collapse;width:100%;font-size:13px}
+td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:middle}
+th{color:var(--muted);font-weight:500}
+.x{display:inline-block;width:40px;height:22px;border-radius:4px;vertical-align:middle;position:relative}
+.x::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:2px;background:var(--text);transform:rotate(-20deg)}
+.light{display:flex;gap:14px;flex-wrap:wrap}
+.light .l{flex:1 1 200px;border-radius:12px;padding:14px;min-height:110px;border:1px solid var(--line);position:relative;overflow:hidden}
+.light .l span{position:relative;font-size:12px}
+.hint{font-size:12px;color:var(--champagne)}
+footer{padding:24px 6vw 60px;color:var(--faint);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>HOSIERY<span class="dot">·</span>LAB　夜色样品馆 · 3D 色板</h1>
+  <p class="sub">Night Atelier palette · 2026-10-07 · 配套 <code style="color:var(--champagne)">design_proposal_vn.md</code>（3D 方案）</p>
+  <p class="note">下方所有“腿”都是用方案 §4 的同一套公式在 2D canvas 上逐像素算出来的（α(D)、视角加深、各向异性光泽、网眼遮罩），用于直观看颜色；真正的 3D 着色器在原型里实现。移动鼠标/手指可移动主光 · Move the pointer to move the key light.</p>
+</header>
+
+<section>
+  <h2>1 · 「夜」界面色（DOM，默认）</h2>
+  <p class="note">对比度按 WCAG 2.1 实时计算（相对 --bg #110C0D）。rouge 只做按钮底色，不做小字。</p>
+  <div class="grid" id="ui"></div>
+</section>
+
+<section class="day">
+  <h2>2 · 「昼」阅读页（用法 · 丝袜百科 · 方法与来源 · 条款）</h2>
+  <p class="note">对比度相对 Blush Cream #F4EBE4。阅读页关闭全屏 3D。</p>
+  <div class="grid" id="dayg"></div>
+</section>
+
+<section>
+  <h2>3 · 场景与灯光（3D 新增）</h2>
+  <p class="note">暗房间 + 奶油色展台与主光：Lab 奶油被保留为“光”和“展台”。</p>
+  <div class="grid" id="scene"></div>
+  <div style="height:18px"></div>
+  <div class="light">
+    <div class="l" style="background:radial-gradient(60% 90% at 25% 10%,#FFE2C2 0%,#5a4337 30%,#1A1315 70%)"><span>棚拍 Studio · key <code>#FFE2C2</code> + rim <code>#E7A3A0</code></span></div>
+    <div class="l" style="background:radial-gradient(70% 100% at 30% 0%,#F4F1EC 0%,#625b56 35%,#1c1819 75%)"><span>日光 Daylight · <code>#F4F1EC</code></span></div>
+    <div class="l" style="background:radial-gradient(55% 80% at 30% 20%,#FFB877 0%,#5b3a22 32%,#150e0c 72%)"><span>夜晚 Tungsten · <code>#FFB877</code></span></div>
+  </div>
+</section>
+
+<section>
+  <h2>4 · 肤色（仅用于展示腿与色样，不用于界面）</h2>
+  <div class="grid" id="skin"></div>
+</section>
+
+<section>
+  <h2>5 · 丹尼尔长廊：同一束光下的 5D → 200D（黑色）</h2>
+  <p class="note">首页 hero 的颜色预演。中间 α = α(D)，边缘按 1−(1−α)^(1/cosθ) 加深：薄袜“边深中浅”。</p>
+  <div class="controls" id="skinBtns"></div>
+  <div class="stage"><div class="legs" id="ladder"></div></div>
+</section>
+
+<section>
+  <h2>6 · 七种光泽 finish_type（同色同 D：20D 烟黑）</h2>
+  <p class="note">光泽 = 沿腿方向的各向异性高光带。哑光几乎没有；湿感极窄极亮 + 边缘菲涅耳亮边；闪光带随机闪点。移动指针看高光滑动。</p>
+  <div class="stage"><div class="legs" id="finishes"></div></div>
+</section>
+
+<section>
+  <h2>7 · 24 条 pilot 实录（palette-data.js），按真实 D / 颜色 / finish / 织法 / 长度渲染</h2>
+  <p class="note">网眼类（open_structure）用网格遮罩：网线 100% 袜色，孔里是肤色。长度按 length_bucket 截断（腿顶为大腿中部切面）。</p>
+  <div class="stage"><div class="legs" id="pilot"></div></div>
+</section>
+
+<section>
+  <h2>8 · 两个复制按钮 + 已复制状态</h2>
+  <p class="note">红实心 = 复制丝袜 · 香槟描边 = 复制整图 · 已复制统一用香槟底（不用绿色）。丝光迸发的粒子颜色与按钮一致。</p>
+  <div class="btns"><button class="b1">复制丝袜 · Hosiery</button><button class="b2">复制整图 · Full prompt</button><button class="b3">已复制 ✓</button></div>
+</section>
+
+<section>
+  <h2>9 · 一屏用色比例（找丝袜页）</h2>
+  <div class="bar">
+    <div style="flex:70;background:linear-gradient(90deg,#110C0D,#1A1315,#241A1D)">暗场 / 界面 ~70%</div>
+    <div style="flex:22;background:linear-gradient(90deg,#E9DFD3,#cdb7a6)"><span style="color:#1C1214">产品图 · 3D 腿 ~22%</span></div>
+    <div style="flex:5;background:#BBA79D"><span style="color:#1C1214">字</span></div>
+    <div style="flex:2.5;background:#C42E47">R</div>
+    <div style="flex:1.5;background:#D9B68C"></div>
+  </div>
+  <p class="note">rouge 超过 5% 就从“性感”滑向“促销/成人站”。这是色板最重要的一条规则。</p>
+</section>
+
+<section>
+  <h2>10 · 禁用色</h2>
+  <table>
+    <tr><th></th><th>颜色</th><th>为什么不用</th></tr>
+    <tr><td><span class="x" style="background:#FF1493"></span></td><td>热粉 / 品红</td><td>直接联想成人站、廉价玩具</td></tr>
+    <tr><td><span class="x" style="background:#FF0000"></span></td><td>纯红</td><td>读作“报错”或“SALE”</td></tr>
+    <tr><td><span class="x" style="background:linear-gradient(90deg,#7b2cff,#ff2bd6,#00e5ff)"></span></td><td>霓虹紫 / 彩虹渐变</td><td>游戏、夜店，不是时装</td></tr>
+    <tr><td><span class="x" style="background:linear-gradient(135deg,#8a6a1f,#ffe08a,#8a6a1f)"></span></td><td>金属金渐变</td><td>俗气、赌场。香槟必须是平、哑的</td></tr>
+    <tr><td><span class="x" style="background:#000"></span></td><td>纯黑大面积</td><td>冷、图像像贴上去</td></tr>
+    <tr><td><span class="x" style="background:#2ecc71"></span></td><td>绿色“成功”</td><td>破坏色系，用香槟</td></tr>
+  </table>
+</section>
+
+<footer>文件：ui_redesign/palette.html · 数据：palette-data.js（若缺失，第 7 节自动隐藏）· 无外部依赖</footer>
+
+<script src="palette-data.js"></script>
+<script>
+/* ---------- 颜色工具 ---------- */
+const hex2rgb=h=>{h=h.replace('#','');return [0,2,4].map(i=>parseInt(h.substr(i,2),16))};
+const lum=h=>{const c=hex2rgb(h).map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+const cr=(a,b)=>{const x=lum(a),y=lum(b);return ((Math.max(x,y)+.05)/(Math.min(x,y)+.05)).toFixed(1)};
+const ink=h=>lum(h)>.25?'#1C1214':'#F2E8E0';
+
+function swatches(el,list,bg){
+  const g=document.getElementById(el);
+  list.forEach(([tok,name,hx,use])=>{
+    const d=document.createElement('div');d.className='sw';
+    d.innerHTML=`<div class="chip" style="background:${hx};color:${ink(hx)}">${hx}${bg?` · ${cr(hx,bg)}:1`:''}</div>
+      <div class="meta"><b>${name}</b><code>${tok}</code><br>${use}</div>`;
+    g.appendChild(d);
+  });
+}
+swatches('ui',[
+ ['--bg','Noir Velours','#110C0D','页面底 = 3D 雾色'],
+ ['--surface','Espresso','#1A1315','吸顶栏、底部复制栏、sheet'],
+ ['--card','Mocha Noir','#241A1D','卡片、输入框'],
+ ['--line','Smoke Seam','#3A2A2E','描边、分割线'],
+ ['--text','Ivory Skin','#F2E8E0','正文'],
+ ['--muted','Taupe Rosé','#BBA79D','参数、次要文字'],
+ ['--faint','Dusk','#8A7770','HL 编号、元信息'],
+ ['--rouge','Rouge Noir','#C42E47','复制丝袜按钮底、选中 chip'],
+ ['--rouge-hi','Rouge Lit','#E04A62','链接、rouge 悬停'],
+ ['--oxblood','Oxblood','#5E1220','选中 chip 底、深度'],
+ ['--champagne','Champagne Sheen','#D9B68C','复制整图、焦点环、已复制'],
+ ['--champagne-hi','Highlight','#FFF4E6','仅光泽与粒子，不做字'],
+],'#110C0D');
+swatches('dayg',[
+ ['--bg','Blush Cream','#F4EBE4','阅读页底'],
+ ['--surface','Silk Paper','#FBF6F1','插图框、表格'],
+ ['--line','Nude Seam','#E2D3CA','表格线'],
+ ['--text','Ink Plum','#1C1214','正文'],
+ ['--muted','Mauve Taupe','#6B5751','次要文字'],
+ ['--rouge','Rouge Deep','#9C1C31','链接、按钮'],
+ ['--champagne','Antique Gold','#8A6A43','图标（≥18px 才做字）'],
+],'#F4EBE4');
+swatches('scene',[
+ ['scene.fog','Velours Fog','#110C0D','远处雾 = --bg'],
+ ['scene.cyc','Cyclorama','#1A1315','弧形背景'],
+ ['scene.floor','Lacquer','#0D090A','漆面地板'],
+ ['scene.plinth','Lab Cream','#E9DFD3','展台：Lab 奶油色留在这里'],
+ ['scene.cap','Champagne Cap','#D9B68C','腿部切面盖、展台边'],
+ ['light.key','Key Cream','#FFE2C2','主光 ~3200K'],
+ ['light.rim','Rim Rose','#E7A3A0','轮廓光（低强度）'],
+ ['light.fill','Dusk Fill','#8A7770','补光（极弱）'],
+ ['light.day','Daylight','#F4F1EC','预设 日光'],
+ ['light.night','Tungsten Night','#FFB877','预设 夜晚'],
+ ['fx.particle','Silk Dust','#FFF4E6','丝光迸发、浮尘'],
+]);
+swatches('skin',[
+ ['skin.porcelain','Porcelain','#EBC9B5','瓷白'],
+ ['skin.nude','Nude（默认）','#D4A28A','裸色'],
+ ['skin.mocha','Mocha','#8C5E48','摩卡'],
+]);
+
+/* ---------- 丝袜着色（与方案 §4 同一套公式） ---------- */
+const alphaD=D=>.18+.78*(1-Math.exp(-D/32));
+const OPA_D={ultra_sheer:8,sheer:15,semi_sheer:28,semi_opaque:48,opaque:80,heavy_opaque:150};
+const FIN={matte:[0,.3],semi_matte:[.08,.34],satin:[.18,.26],glossy:[.30,.15],high_shine:[.48,.08],wet_look:[.65,.05],shimmer:[.12,.3]};
+const COVER={footie:.07,ankle:.12,crew:.22,mid_calf:.34,knee_high:.47,over_the_knee:.62,thigh_high:.84,waist:1,body_suspender:1};
+let SKIN='#D4A28A', KEYX=-.35; // 主光在腿上的横向位置（-1 左 … 1 右）
+
+// 腿部轮廓：t=0 顶（大腿中部切面）→ t=1 脚踝。返回半宽系数。
+function legW(t){
+  const k=[[0,1],[.18,.9],[.42,.62],[.5,.58],[.62,.66],[.72,.6],[.9,.36],[1,.3]];
+  for(let i=1;i<k.length;i++) if(t<=k[i][0]){const [a,wa]=k[i-1],[b,wb]=k[i];const u=(t-a)/(b-a),s=u*u*(3-2*u);return wa+(wb-wa)*s}
+  return .3;
+}
+function hash(x,y){const s=Math.sin(x*127.1+y*311.7)*43758.5453;return s-Math.floor(s)}
+
+function drawLeg(cv,r){
+  const W=cv.width,H=cv.height,ctx=cv.getContext('2d'),img=ctx.createImageData(W,H),p=img.data;
+  const skin=hex2rgb(SKIN),hose=hex2rgb(r.hex||'#2A2829');
+  const D=r.den??OPA_D[r.opacity]??20, a=alphaD(D);
+  const [sI,sW]=FIN[r.fin_code]||FIN.matte;
+  const net=r.opacity==='open_structure'||['fishnet','mesh','openwork'].includes(r.texture);
+  const cell=r.texture==='fishnet'?11:r.texture==='openwork'?8:5;
+  const cover=COVER[r.bucket]??1, topBand=['thigh_high','over_the_knee'].includes(r.bucket);
+  const key=[1,.886,.761], rim=[.906,.639,.627];
+  const maxHW=W*.42, cx=W/2;
+  for(let y=0;y<H;y++){
+    const t=y/(H-1), hw=maxHW*legW(t);
+    const covered=(1-t)<=cover; const band=topBand&&covered&&(1-t)>cover-.05;
+    for(let x=0;x<W;x++){
+      const i=(y*W+x)*4, nx=(x-cx)/hw;
+      if(Math.abs(nx)>1){p[i+3]=0;continue}
+      const nz=Math.sqrt(1-nx*nx);
+      // 漫反射：主光来自左上，轮廓光在右后
+      const L=[-.55,.83]; const dif=Math.max(0,nx*L[0]+nz*L[1])*.82+.18;
+      const rimT=Math.pow(Math.max(0,nx),6)*.55;
+      let col=[0,1,2].map(c=>skin[c]/255*dif*key[c]);
+      if(covered){
+        let av=1-Math.pow(1-a,1/Math.max(nz,.15));
+        if(band) av=Math.min(1,av+.25);
+        if(net){
+          const u=(x-cx+y*.0)/cell, v=y/cell;
+          const d1=Math.abs(((u+v)%2+2)%2-1), d2=Math.abs(((u-v)%2+2)%2-1);
+          av=(Math.min(d1,d2)<.18)?1:0;
+          if(r.opacity!=='open_structure') av=Math.max(av,1-Math.pow(1-a,1/Math.max(nz,.15)));
+        }else if(r.texture==='ribbed'){av=Math.min(1,av*(.9+.1*Math.sin(x*1.6)))}
+        else if(r.texture==='cable'){av=Math.min(1,av*(.88+.12*Math.sin(x*.9+Math.sin(y*.18)*3)))}
+        else if(r.texture==='jacquard'){av=Math.min(1,av*(((Math.floor(x/6)+Math.floor(y/6))%2)?1:.85))}
+        else if(r.texture==='lace'){const h=hash(Math.floor(x/3),Math.floor(y/3));av=Math.min(1,av*(h>.7?.6:1.08))}
+        const hc=[0,1,2].map(c=>hose[c]/255*dif*key[c]);
+        col=col.map((v,c)=>v*(1-av)+hc[c]*av);
+        // 各向异性光泽带（沿腿纵向）
+        if(sI>0){
+          const g=Math.exp(-Math.pow((nx-KEYX)/sW,2))*sI*(.55+.45*av);
+          let s=g;
+          if(r.fin_code==='high_shine') s+=Math.exp(-Math.pow((nx-KEYX-.35)/.06,2))*sI*.35;
+          if(r.fin_code==='wet_look') s+=Math.pow(1-nz,4)*.35;
+          if(r.fin_code==='shimmer'&&hash(x,y)>.985) s+=.7*Math.max(0,1-Math.abs(nx-KEYX));
+          col=col.map(v=>v+s);
+        }
+      }
+      col=col.map((v,c)=>v+rimT*rim[c]*.6);
+      // 竖向轻微明暗：膝下略暗
+      const vg=.92+.08*Math.cos(t*Math.PI*.9);
+      p[i]=Math.min(255,col[0]*vg*255);p[i+1]=Math.min(255,col[1]*vg*255);p[i+2]=Math.min(255,col[2]*vg*255);
+      // 边缘抗锯齿
+      p[i+3]=Math.min(255,(1-Math.abs(nx))*hw*255*1.2);
+    }
+  }
+  ctx.putImageData(img,0,0);
+}
+
+const legs=[];
+function addLeg(host,r,lbl,lbl2,code,w=64,h=240){
+  const box=document.createElement('div');box.className='leg';
+  const cv=document.createElement('canvas');const dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=w*dpr;cv.height=h*dpr;cv.style.width=w+'px';cv.style.height=h+'px';
+  box.appendChild(cv);
+  const pl=document.createElement('div');pl.className='plinth';
+  pl.style.cssText=`width:${w+16}px;height:10px;background:linear-gradient(#E9DFD3,#b9ab9c);border-top:1px solid #D9B68C`;
+  box.appendChild(pl);
+  if(lbl){const l=document.createElement('div');l.className='lbl';l.textContent=lbl;box.appendChild(l)}
+  if(lbl2){const l=document.createElement('div');l.className='lbl2';l.textContent=lbl2;box.appendChild(l)}
+  if(code){const l=document.createElement('div');l.className='code';l.textContent=code;box.appendChild(l)}
+  host.appendChild(box);legs.push([cv,r]);
+}
+
+const ladder=document.getElementById('ladder');
+[5,10,15,20,40,80,100,200].forEach(D=>addLeg(ladder,{den:D,hex:'#1A1718',fin_code:'semi_matte',bucket:'waist',texture:'plain',opacity:'sheer'},D+'D','α '+alphaD(D).toFixed(2)));
+
+const fin=document.getElementById('finishes');
+const FL={matte:'哑光',semi_matte:'柔光',satin:'缎光',glossy:'亮光',high_shine:'高光',wet_look:'湿感',shimmer:'闪光'};
+Object.keys(FL).forEach(f=>addLeg(fin,{den:20,hex:'#2A2829',fin_code:f,bucket:'waist',texture:'plain',opacity:'sheer'},FL[f],f));
+
+const pilot=document.getElementById('pilot');
+if(window.HL_DATA){
+  HL_DATA.forEach(r=>addLeg(pilot,r,r.den?r.den+'D':'网',`${r.color} ${r.cat} · ${r.finish}`,r.code,56,210));
+}else{pilot.closest('section').style.display='none'}
+
+const sb=document.getElementById('skinBtns');
+[['瓷白 Porcelain','#EBC9B5'],['裸色 Nude','#D4A28A'],['摩卡 Mocha','#8C5E48']].forEach(([n,h])=>{
+  const b=document.createElement('button');b.className='c'+(h===SKIN?' on':'');b.textContent=n;
+  b.onclick=()=>{SKIN=h;sb.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));redraw()};
+  sb.appendChild(b);
+});
+const hint=document.createElement('span');hint.className='hint';hint.style.alignSelf='center';
+hint.textContent='肤色切换作用于本页所有腿';sb.appendChild(hint);
+
+function redraw(){legs.forEach(([cv,r])=>drawLeg(cv,r))}
+redraw();
+
+// 主光跟随指针（与 3D 方案一致：±12° → 这里映射为高光带横移）
+let raf=0;
+function onMove(e){
+  const x=(e.touches?e.touches[0].clientX:e.clientX)/window.innerWidth;
+  const k=-.65+x*.75; if(Math.abs(k-KEYX)<.04) return; KEYX=k;
+  cancelAnimationFrame(raf);raf=requestAnimationFrame(redraw);
+}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  addEventListener('mousemove',onMove,{passive:true});addEventListener('touchmove',onMove,{passive:true});
+}
+</script>
+</body>
+</html>

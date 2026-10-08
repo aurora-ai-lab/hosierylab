@@ -6,6 +6,5 @@ export const metadata = { title: "Explore Hosiery · HosieryLab", description: "
 
 export default function HosieryPage() {
   const count = allHosiery.length;
-  const reviewed = allHosiery.filter((item) => item.confidence !== "low").length;
-  return <><SiteHeader /><main className="shell page-main"><div className="page-intro"><div><p className="eyebrow">THE CATALOG</p><h1>Explore hosiery.</h1><p>{count} rendered visual references are indexed across length, coverage, opacity, color and construction. {reviewed} are reviewed; archive records remain clearly marked until editorial review.</p></div><div className="intro-stat"><strong>{count}</strong><span>indexed assets · {reviewed} reviewed</span></div></div><HosieryExplorer /></main></>;
+  return <><SiteHeader /><main className="shell page-main"><div className="page-intro"><div><p className="eyebrow">THE CATALOG</p><h1>Explore hosiery.</h1><p>{count} rendered visual references are indexed across length, coverage, opacity, color and construction. Each record keeps its image, prompt layers and metadata together.</p></div><div className="intro-stat"><strong>{count}</strong><span>indexed assets</span></div></div><HosieryExplorer /></main></>;
 }

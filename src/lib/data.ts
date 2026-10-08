@@ -1,3 +1,6 @@
+import { colorCodeOf, type ColorCode } from "./color";
+import { generatedCatalog } from "./generatedCatalog";
+
 export type LengthClass =
   | "footie"
   | "ankle"
@@ -32,6 +35,7 @@ export type HosieryItem = {
   opacity: string;
   colorFamily: string;
   colorLabel: string;
+  colorCode?: ColorCode;
   hex: string;
   material: string[];
   finish: string;
@@ -52,6 +56,12 @@ export type HosieryItem = {
   assetShoe?: string;
   cosplayArchetype?: string;
   category?: CatalogCategory;
+  dataset?: "legacy" | "v2";
+  promptMetadataUrl?: string;
+  promptOriginalUrl?: string;
+  promptFullBodyUrl?: string;
+  promptHosieryUrl?: string;
+  watermarkVersion?: string;
 };
 
 export const catalogCategoryLabels: Record<CatalogCategory | "all", string> = {
@@ -120,13 +130,28 @@ export const hosiery: HosieryItem[] = [
   },
 ];
 
-export const allHosiery: HosieryItem[] = [...hosiery, ...generatedCatalog];
+// The generated catalog is the authoritative 2,000-record dataset. The small
+// hand-authored sample above remains available for editorial reference, but is
+// deliberately excluded here so it cannot duplicate public records.
+function batchRank(code: string) {
+  const suffix = code.replace(/^HL-/, "");
+  const prefix = suffix.match(/^[A-Za-z]+/)?.[0] ?? "";
+  if (!prefix) return Number.MAX_SAFE_INTEGER;
+  return prefix.split("").reduce((rank, char) => rank * 26 + char.charCodeAt(0), 0);
+}
+
+// Newer batches sort ahead of older batches (numeric HL-000001, then B, A, ...).
+export type CatalogHosieryItem = HosieryItem & { colorCode: ColorCode };
+
+export const allHosiery: CatalogHosieryItem[] = generatedCatalog
+  .map((item) => ({ ...item, colorCode: colorCodeOf(item.colorFamily) }))
+  .sort((a, b) => batchRank(b.code) - batchRank(a.code));
 
 export const lengthFilters = [
   ["all", "All lengths"], ["footie", "Footie / No-show"], ["ankle", "Ankle"], ["crew", "Crew"], ["mid_calf", "Mid-Calf"], ["knee_high", "Knee High"], ["over_the_knee", "Over-the-Knee"], ["thigh_high", "Thigh High"], ["waist", "Pantyhose / Tights"], ["full_body", "Bodystocking"],
 ] as const;
 
 export const getHosiery = (slug: string) => allHosiery.find((item) => item.slug === slug || item.code.toLowerCase() === slug.toLowerCase());
-import { generatedCatalog } from "./generatedCatalog";
+
 
 

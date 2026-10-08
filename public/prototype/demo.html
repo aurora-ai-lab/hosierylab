@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HosieryLab · 夜色样品馆 Demo</title>
+  <style>
+    :root{color-scheme:dark;--bg:#110c0d;--panel:#1a1315;--line:#3a2a2e;--text:#f2e8e0;--muted:#bba79d;--champagne:#d9b68c;--rouge:#c42e47}
+    *{box-sizing:border-box}html,body{margin:0;background:radial-gradient(circle at 75% 0,#3b252b 0,#110c0d 45%,#090607 100%);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"PingFang SC",sans-serif}
+    body{min-height:100vh}.wrap{max-width:1540px;margin:auto;padding:28px clamp(16px,4vw,58px) 46px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.brand{font-size:12px;letter-spacing:.15em;color:var(--champagne)}.brand b{color:var(--text);font-size:15px}.links{display:flex;gap:14px;align-items:center}.links a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}.links a:hover{color:var(--champagne);border-color:var(--champagne)}.eyebrow{margin:44px 0 10px;color:var(--champagne);letter-spacing:.18em;text-transform:uppercase;font-size:10px}.hero{display:grid;grid-template-columns:minmax(240px,.65fr) minmax(560px,1.35fr);gap:28px;align-items:end}.hero h1{font:clamp(42px,6vw,82px)/.95 Georgia,"Songti SC",serif;font-weight:400;letter-spacing:-.06em;margin:0 0 20px}.hero h1 em{font-style:italic;color:var(--champagne)}.hero p{max-width:440px;color:var(--muted);margin:0}.note{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.note span{border:1px solid var(--line);padding:6px 9px;color:var(--muted);font-size:11px}.frame{margin-top:28px;border:1px solid var(--line);background:rgba(26,19,21,.65);box-shadow:0 25px 90px rgba(0,0,0,.3);overflow:hidden}.frame-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11px}.frame-head strong{color:var(--text);font-weight:500}.frame iframe{display:block;width:100%;height:min(82vh,1100px);min-height:720px;border:0;background:#110c0d}.foot{margin-top:18px;color:var(--muted);font-size:11px}.foot a{color:var(--champagne)}@media(max-width:900px){.hero{grid-template-columns:1fr}.eyebrow{margin-top:28px}.frame iframe{height:850px;min-height:680px}}@media(max-width:540px){.wrap{padding:18px 12px 32px}.top{align-items:flex-start}.links{font-size:12px;gap:8px}.hero h1{font-size:48px}.frame-head{display:block}.frame-head span{display:block;margin-top:4px}.frame iframe{height:850px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top"><div class="brand"><b>HOSIERY·LAB</b> / NIGHT ATELIER DEMO</div><nav class="links"><a href="index.html">完整原型</a></nav></header>
+    <section class="hero"><div><div class="eyebrow">DEMO / MATERIAL FITTING</div><h1>先看材质，<br><em>再选样品。</em></h1><p>这是夜色样品馆的可交互演示版。拖动展示脚、切换 D 数与光泽，并从完整目录里选择真实样品。</p><div class="note"><span>2000 条目录样品</span><span>3D 材质示意</span><span>真实 metadata 复制</span></div></div><div class="frame"><div class="frame-head"><strong>夜色样品馆 / INTERACTIVE DEMO</strong><span>展示假腿 · 同一束光 · 低机位预览</span></div><iframe src="index.html" title="HosieryLab 夜色样品馆交互演示"></iframe></div></section>
+    <p class="foot">演示页面只负责导览，样品、图片、提示词与 metadata 仍来自正式目录。<a href="index.html">打开完整原型 →</a></p>
+  </main>
+</body>
+</html>
