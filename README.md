@@ -42,14 +42,14 @@ HosieryLab 把丝袜拆成可观察、可检索、可复用的变量：D 数、�
 
 <table>
   <tr>
-    <td align="center"><a href="https://hosierylab.com/hosiery/hl-a000001"><img src="showcase/HL-A000001.webp" width="150" alt="15D 纯黑连裤袜" /></a><br /><sub>15D · 纯黑 · 连裤袜</sub></td>
-    <td align="center"><a href="https://hosierylab.com/hosiery/hl-a000003"><img src="showcase/HL-A000003.webp" width="150" alt="20D 纯黑波点连裤袜" /></a><br /><sub>20D · 波点 · 纯黑</sub></td>
-    <td align="center"><a href="https://hosierylab.com/hosiery/hl-a000008"><img src="showcase/HL-A000008.webp" width="150" alt="20D 炭灰后缝线连裤袜" /></a><br /><sub>20D · 后缝线 · 炭灰</sub></td>
+    <td align="center"><a href="https://hosierylab.com/hosiery/hl-c000399"><img src="showcase/HL-C000399.webp" width="150" alt="5D 纯白及膝袜" /></a><br /><sub>5D · 纯白 · 及膝袜</sub></td>
+    <td align="center"><a href="https://hosierylab.com/hosiery/hl-c000127"><img src="showcase/HL-C000127.webp" width="150" alt="15D 纯黑连裤袜" /></a><br /><sub>15D · 纯黑 · 连裤袜</sub></td>
+    <td align="center"><a href="https://hosierylab.com/hosiery/hl-c000097"><img src="showcase/HL-C000097.webp" width="150" alt="60D 纯黑连裤袜" /></a><br /><sub>60D · 纯黑 · 连裤袜</sub></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://hosierylab.com/hosiery/hl-a000010"><img src="showcase/HL-A000010.webp" width="150" alt="15D 炭灰缎光连裤袜" /></a><br /><sub>15D · 缎光 · 炭灰</sub></td>
-    <td align="center"><a href="https://hosierylab.com/hosiery/hl-a000015"><img src="showcase/HL-A000015.webp" width="150" alt="40D 黑色罗纹连裤袜" /></a><br /><sub>40D · 罗纹 · 黑色</sub></td>
-    <td align="center"><a href="https://hosierylab.com/hosiery/hl-a000020"><img src="showcase/HL-A000020.webp" width="150" alt="薄透丝袜视觉样本" /></a><br /><sub>薄透 · 结构 · 统一光线</sub></td>
+    <td align="center"><a href="https://hosierylab.com/hosiery/hl-c000367"><img src="showcase/HL-C000367.webp" width="150" alt="100D 纯黑连裤袜" /></a><br /><sub>100D · 纯黑 · 连裤袜</sub></td>
+    <td align="center"><a href="https://hosierylab.com/hosiery/hl-c000295"><img src="showcase/HL-C000295.webp" width="150" alt="15D 象牙白连裤袜" /></a><br /><sub>15D · 象牙白 · 连裤袜</sub></td>
+    <td align="center"><a href="https://hosierylab.com/hosiery/hl-c000340"><img src="showcase/HL-C000340.webp" width="150" alt="50D 象牙白连裤袜" /></a><br /><sub>50D · 象牙白 · 连裤袜</sub></td>
   </tr>
 </table>
 
