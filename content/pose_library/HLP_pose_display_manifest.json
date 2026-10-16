@@ -1,0 +1,261 @@
+{
+  "version": "2026-10-16",
+  "library": "HLP pose display library",
+  "asset_base": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/",
+  "contact_sheet": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-23_contact_sheet.png",
+  "records": [
+    {
+      "id": "HLP-0001",
+      "name_en": "Front Standing Pose",
+      "name_zh": "正面站立",
+      "category_en": "Front standing",
+      "category_zh": "正面站立",
+      "source": "C01_a",
+      "seed": 251017,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0001_display.png"
+    },
+    {
+      "id": "HLP-0002",
+      "name_en": "Front Standing Pose · Variant 2",
+      "name_zh": "正面站立 · 变体 2",
+      "category_en": "Front standing",
+      "category_zh": "正面站立",
+      "source": "C01_b",
+      "seed": 251018,
+      "note": "QC B: ankle points incomplete",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0002_display.png"
+    },
+    {
+      "id": "HLP-0003",
+      "name_en": "Front Standing Pose · Variant 3",
+      "name_zh": "正面站立 · 变体 3",
+      "category_en": "Front standing",
+      "category_zh": "正面站立",
+      "source": "C01_c",
+      "seed": 251019,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0003_display.png"
+    },
+    {
+      "id": "HLP-0004",
+      "name_en": "Front Standing Pose · Variant 4",
+      "name_zh": "正面站立 · 变体 4",
+      "category_en": "Front standing",
+      "category_zh": "正面站立",
+      "source": "C01_d",
+      "seed": 251020,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0004_display.png"
+    },
+    {
+      "id": "HLP-0005",
+      "name_en": "Front Standing Pose · Variant 5",
+      "name_zh": "正面站立 · 变体 5",
+      "category_en": "Front standing",
+      "category_zh": "正面站立",
+      "source": "C01_e",
+      "seed": 251021,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0005_display.png"
+    },
+    {
+      "id": "HLP-0006",
+      "name_en": "Front Standing Pose · Variant 6",
+      "name_zh": "正面站立 · 变体 6",
+      "category_en": "Front standing",
+      "category_zh": "正面站立",
+      "source": "C01_f",
+      "seed": 251022,
+      "note": "QC B: ankle points incomplete",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0006_display.png"
+    },
+    {
+      "id": "HLP-0007",
+      "name_en": "Back Standing Pose",
+      "name_zh": "背面站立",
+      "category_en": "Back standing",
+      "category_zh": "背面站立",
+      "source": "C03_a",
+      "seed": 251023,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0007_display.png"
+    },
+    {
+      "id": "HLP-0008",
+      "name_en": "Back Standing Pose · Variant 2",
+      "name_zh": "背面站立 · 变体 2",
+      "category_en": "Back standing",
+      "category_zh": "背面站立",
+      "source": "C03_b",
+      "seed": 251024,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0008_display.png"
+    },
+    {
+      "id": "HLP-0009",
+      "name_en": "Back Standing Pose · Variant 3",
+      "name_zh": "背面站立 · 变体 3",
+      "category_en": "Back standing",
+      "category_zh": "背面站立",
+      "source": "C03_c",
+      "seed": 251025,
+      "note": "QC A: subject is smaller in source",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0009_display.png"
+    },
+    {
+      "id": "HLP-0010",
+      "name_en": "Back Standing Pose · Variant 4",
+      "name_zh": "背面站立 · 变体 4",
+      "category_en": "Back standing",
+      "category_zh": "背面站立",
+      "source": "C03_d",
+      "seed": 251026,
+      "note": "QC B: knees low confidence",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0010_display.png"
+    },
+    {
+      "id": "HLP-0011",
+      "name_en": "Three-Quarter Standing Pose",
+      "name_zh": "四分之三站姿",
+      "category_en": "Three-quarter standing",
+      "category_zh": "¾ 站姿",
+      "source": "C04_a",
+      "seed": 251018,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0011_display.png"
+    },
+    {
+      "id": "HLP-0012",
+      "name_en": "Three-Quarter Standing Pose · Variant 2",
+      "name_zh": "四分之三站姿 · 变体 2",
+      "category_en": "Three-quarter standing",
+      "category_zh": "¾ 站姿",
+      "source": "C04_b",
+      "seed": 251028,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0012_display.png"
+    },
+    {
+      "id": "HLP-0013",
+      "name_en": "Three-Quarter Standing Pose · Variant 3",
+      "name_zh": "四分之三站姿 · 变体 3",
+      "category_en": "Three-quarter standing",
+      "category_zh": "¾ 站姿",
+      "source": "C04_marginal",
+      "seed": 251029,
+      "note": "QC B: ankle confidence low",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0013_display.png"
+    },
+    {
+      "id": "HLP-0014",
+      "name_en": "Seated Pose",
+      "name_zh": "坐姿",
+      "category_en": "Seated",
+      "category_zh": "坐姿",
+      "source": "SIT_a",
+      "seed": 251030,
+      "note": "QC A; shown without a chair",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0014_display.png"
+    },
+    {
+      "id": "HLP-0015",
+      "name_en": "Seated Pose · Variant 2",
+      "name_zh": "坐姿 · 变体 2",
+      "category_en": "Seated",
+      "category_zh": "坐姿",
+      "source": "SIT_b",
+      "seed": 251031,
+      "note": "QC B: missing lower-limb points",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0015_display.png"
+    },
+    {
+      "id": "HLP-0016",
+      "name_en": "Seated Pose · Variant 3",
+      "name_zh": "坐姿 · 变体 3",
+      "category_en": "Seated",
+      "category_zh": "坐姿",
+      "source": "SIT_c",
+      "seed": 251032,
+      "note": "QC B: ankle points incomplete",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0016_display.png"
+    },
+    {
+      "id": "HLP-0017",
+      "name_en": "Seated Pose · Variant 4",
+      "name_zh": "坐姿 · 变体 4",
+      "category_en": "Seated",
+      "category_zh": "坐姿",
+      "source": "SIT_d",
+      "seed": 251033,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0017_display.png"
+    },
+    {
+      "id": "HLP-0018",
+      "name_en": "Seated Pose · Variant 5",
+      "name_zh": "坐姿 · 变体 5",
+      "category_en": "Seated",
+      "category_zh": "坐姿",
+      "source": "SIT_marginal",
+      "seed": 251034,
+      "note": "QC A",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0018_display.png"
+    },
+    {
+      "id": "HLP-0019",
+      "name_en": "Extended Leg Pose",
+      "name_zh": "伸腿姿势",
+      "category_en": "Extended leg",
+      "category_zh": "扩展",
+      "source": "EXT_backleg",
+      "seed": 251035,
+      "note": "QC B: left ankle confidence low",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0019_display.png"
+    },
+    {
+      "id": "HLP-0020",
+      "name_en": "Back Walking Step",
+      "name_zh": "背面迈步",
+      "category_en": "Back walking step",
+      "category_zh": "迈步（背面）",
+      "source": "C08_a",
+      "seed": 251020,
+      "note": "QC A; source video frame",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0020_display.png"
+    },
+    {
+      "id": "HLP-0021",
+      "name_en": "Back Walking Step · Variant 2",
+      "name_zh": "背面迈步 · 变体 2",
+      "category_en": "Back walking step",
+      "category_zh": "迈步（背面）",
+      "source": "C08_b",
+      "seed": 251037,
+      "note": "QC A: left hip near guide line",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0021_display.png"
+    },
+    {
+      "id": "HLP-0022",
+      "name_en": "Back Walking Step · Variant 3",
+      "name_zh": "背面迈步 · 变体 3",
+      "category_en": "Back walking step",
+      "category_zh": "迈步（背面）",
+      "source": "C08_c",
+      "seed": 251038,
+      "note": "QC B: ankles near lower edge",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0022_display.png"
+    },
+    {
+      "id": "HLP-0023",
+      "name_en": "Pure Side Standing Pose",
+      "name_zh": "纯侧面站立",
+      "category_en": "Side standing",
+      "category_zh": "纯侧面站立",
+      "source": "C02gen_1",
+      "seed": 251039,
+      "note": "QC B: legs overlap in side view",
+      "image_path": "https://pub-0a9dc645a50c491a84ec5aec0f709d8a.r2.dev/poses/display/HLP-0023_display.png"
+    }
+  ]
+}
